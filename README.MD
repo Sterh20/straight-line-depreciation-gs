@@ -1,21 +1,30 @@
-# Straight Line Depreciation Google Sheets' Custom Function [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Straight Line Depreciation - Google Sheets' Custom Function
 
 [![GitHub stars](https://img.shields.io/github/stars/Sterh20/straight-line-depreciation-gs.svg?style=social&label=Stars)](https://github.com/Sterh20/straight-line-depreciation-gs/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Sterh20/straight-line-depreciation-gs.svg?style=social&label=Forks)](https://github.com/Sterh20/straight-line-depreciation-gs/network/members)
 [![GitHub watchers](https://img.shields.io/github/watchers/Sterh20/straight-line-depreciation-gs.svg?style=social&label=Watchers)](https://github.com/Sterh20/straight-line-depreciation-gs/watchers)
 [![GitHub followers](https://img.shields.io/github/followers/Sterh20.svg?style=social&label=Followers)](https://github.com/Sterh20/?tab=followers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+![Google Sheets Badge](https://img.shields.io/badge/Google%20Sheets-34A853?logo=googlesheets&logoColor=fff&style=flat)
+![Google Apps Script Badge](https://img.shields.io/badge/Google%20Apps%20Script-4285F4?logo=googleappsscript&logoColor=fff&style=flat)
+![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat)
+![Node.js Badge](https://img.shields.io/badge/Node.js-393?logo=nodedotjs&logoColor=fff&style=flat)
+![ESLint Badge](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=fff&style=flat)
+![Prettier Badge](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=fff&style=flat)
+
 
 This project implements a function for calculating the sum of depreciation for a given rate and period using the straight-line depreciation method. This function is **very useful when your model has a lot of asset commissions with the same depreciation rate**, but you don't want to calculate the depreciation of each asset in a separate row with a custom formula for each row (like in case of built-in formulas). The intended use of the function is with Google Sheets, but since no specific Google Sheets API was used, the function **can be used in any JavaScript project**.
 
 > **Warning**
 >
-> Google Sheets converts a custom function's input range from a Range object to a number array. As a result, there may be **floating-point arithmetic problems** with the function result. To address this issue, refer to the [**TODO**](#todo) section of this file.
+> Google Sheets converts a custom function's input range from a Range object to a number array. As a result, there may be [**floating-point arithmetic problems**](https://ellenaua.medium.com/floating-point-errors-in-javascript-node-js-21aadd897bf8) with the function result. To address this issue, refer to the [**TODO**](#todo) section of this file.
 
 ## Demo
 
 Use [this](https://docs.google.com/spreadsheets/d/1ARGb06gp4nvuUe74dpBsstVHJ9lB7lWZAr3BzDmfuzQ/copy) Google sheets file with two demonstration sheets:
 
-* **"SLD_Playground"** sheet - simplified example designed for playing around with inputs and getting a "feel" of function.
+* **"SLD_Playground"** sheet - simplified example designed for playing around with inputs and getting a "feel" of the function.
 * **"SLD_Demo"** sheet - simplified part of a more complex example.
 
 ## Function Description
@@ -41,7 +50,7 @@ To use the `STRAIGHT_LINE_DEPRECIATION` function in your Google Sheets spreadshe
     ```JSON
     {
         "scriptId":"Script-ID-from-Project-Settings",
-        "rootDir":"C:\\Local\\path\\to\\repo"
+        "rootDir":"C:\\Local\\path\\to\\repo",
     }
     ```
 
@@ -66,7 +75,7 @@ Make sure to adjust the range and parameters according to your specific requirem
 
 * The implementation of the function accounts for inconsistent behavior of Google Sheets with ranges. If a single value is provided for `assetsBookValues`, it is automatically converted into a 1x1 array for consistency.
 * The function uses a loop to iterate over the assets and calculate the depreciation sum. It accounts for asset commissioning timing, recovery period checks, and edge cases to ensure accurate results.
-* Useful/helper commands for development of this project are gathered in [activation_procedure.md](.setup/activation_procedure.md)
+* Useful/helper commands for development of this project (like `.env` activation) are gathered in [activation_procedure.md](.setup/activation_procedure.md)
 
 ## License
 
@@ -74,7 +83,7 @@ Distributed under the MIT license. See [LICENSE](/LICENSE) for more information
 
 ## TODO
 
-Rewrite to use some kind of equivalent to Decimal or Money class.
+Rewrite to use some kind of equivalent to Decimal or Money class to address [floating-point arithmetic problems](https://ellenaua.medium.com/floating-point-errors-in-javascript-node-js-21aadd897bf8).
 
 <details>
     <summary>Supplementary materials</summary>

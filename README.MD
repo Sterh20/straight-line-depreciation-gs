@@ -66,6 +66,7 @@ Make sure to adjust the range and parameters according to your specific requirem
 
 * The implementation of the function accounts for inconsistent behavior of Google Sheets with ranges. If a single value is provided for `assetsBookValues`, it is automatically converted into a 1x1 array for consistency.
 * The function uses a loop to iterate over the assets and calculate the depreciation sum. It accounts for asset commissioning timing, recovery period checks, and edge cases to ensure accurate results.
+* Useful/helper commands for development of this project are gathered in [activation_procedure.md](.setup/activation_procedure.md)
 
 ## License
 

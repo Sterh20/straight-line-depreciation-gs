@@ -13,7 +13,6 @@
 ![ESLint Badge](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=fff&style=flat)
 ![Prettier Badge](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=fff&style=flat)
 
-
 This project implements a function for calculating the sum of depreciation for a given rate and period using the straight-line depreciation method. This function is **very useful when your model has a lot of asset commissions with the same depreciation rate**, but you don't want to calculate the depreciation of each asset in a separate row with a custom formula for each row (like in case of built-in formulas). The intended use of the function is with Google Sheets, but since no specific Google Sheets API was used, the function **can be used in any JavaScript project**.
 
 > **Warning**

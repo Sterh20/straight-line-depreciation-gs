@@ -43,9 +43,9 @@ function STRAIGHT_LINE_DEPRECIATION (
         recoveryPeriodCheck += rate;
       }
 
-      // Recovery period end check.
+      // Recovery period's end check.
       if (recoveryPeriodCheck >= 1 + rate) {
-        continue;
+        break;
       }
       // Accounts for some weird edge cases.
       // E.g. when recovery period is 3 and hence the rate is 1 / 3,

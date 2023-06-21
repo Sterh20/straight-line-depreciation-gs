@@ -23,7 +23,7 @@ function STRAIGHT_LINE_DEPRECIATION (
   periodFlag: number = 1
 ): number | null {
   // TODO Rewrite to use some kind of equivalent to Decimal or Money class to address precision concerns.
-  let columIndex: number;
+  let columnIndex: number;
   let currentAssetBookValue: number;
   let recoveryPeriodCheck: number = 0;
   let depreciationSum: number = 0;
@@ -35,9 +35,9 @@ function STRAIGHT_LINE_DEPRECIATION (
   const arrayLength: number = assetsBookValues[0].length;
 
   try {
-    for (columIndex = 1; columIndex <= arrayLength; columIndex++) {
+    for (columnIndex = arrayLength; columnIndex >= 1; columnIndex--) {
       // Accounts for asset commissioning timing.
-      if (columIndex === 1) {
+      if (columnIndex === arrayLength) {
         recoveryPeriodCheck = rate * periodFlag;
       } else {
         recoveryPeriodCheck += rate;
@@ -57,8 +57,8 @@ function STRAIGHT_LINE_DEPRECIATION (
         rate -= recoveryPeriodCheck - 1;
       }
 
-      currentAssetBookValue = assetsBookValues[0][arrayLength - columIndex];
-      if (columIndex === 1) {
+      currentAssetBookValue = assetsBookValues[0][columnIndex - 1];
+      if (columnIndex === arrayLength) {
         depreciationSum = currentAssetBookValue * rate * periodFlag;
       } else {
         depreciationSum += currentAssetBookValue * rate;

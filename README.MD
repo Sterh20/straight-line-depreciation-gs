@@ -44,7 +44,7 @@ To use the `STRAIGHT_LINE_DEPRECIATION` function in your Google Sheets spreadshe
 2. Go to "Extensions" > "Apps Script" to open the script editor and create container bound Apps Script project. From **"Project Settings"** save somewhere **Script ID**.
 3. Copy the code directly from [**Demo**](#demo) to the new Apps Script project to use right away or clone this repo and follow the instructions in [setup_procedure.md](.setup/setup_procedure.md):
 
-    3.1. In the cloned repo's root directory create `.clasp.json` with a following line:
+    3.1. In the cloned repo's root directory create `.clasp.json` with the following:
 
     ```JSON
     {
@@ -53,7 +53,7 @@ To use the `STRAIGHT_LINE_DEPRECIATION` function in your Google Sheets spreadshe
     }
     ```
 
-    3.2. Compile and upload all repo's files to the Apps Script project:
+    3.2. Push repo's files to the Apps Script project (don't forget to activate `.env`):
 
     ```powershell
     clasp push
